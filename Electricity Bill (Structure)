@@ -1,5 +1,5 @@
 QUESTION
-Write a C program to input customer id, name, street name, city, pin code, initial reading and final reading of current and calculate the total electricity bill according to the given condition:
+Write a C program to input customer id, name, street name, city, pin code, initial reading and final reading of electric power consumption and calculate the total electricity bill according to the given condition:
 Units               Rate/unit
 For first 50 units – Rs 0.50
 For next 100 units – Rs 0.75
