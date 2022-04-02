@@ -1,0 +1,85 @@
+QUESTION 
+Write a C program to input name and marks of 5 students and print the corresponding details of the students.
+
+
+
+CODE
+#include <stdio.h>
+struct student {
+    char firstName[50];
+    int roll;
+    float marks;
+} s[5];
+int main() {
+    int i;
+    printf("Enter information of students:\n");
+
+    // storing information
+    for (i = 0; i < 5; ++i) {
+        s[i].roll = i + 1;
+        printf("\nFor roll number%d,\n", s[i].roll);
+        printf("Enter first name: ");
+        scanf("%s", s[i].firstName);
+        printf("Enter marks: ");
+        scanf("%f", &s[i].marks);
+    }
+    printf("\n\nDisplaying Information:\n");
+
+    // displaying information
+    for (i = 0; i < 5; ++i) {
+        printf("\nRoll number: %d\n", i + 1);
+        printf("First name: ");
+        puts(s[i].firstName);
+        printf("Marks: %.1f", s[i].marks);
+        printf("\n");
+    }
+    return 0;
+}
+
+
+
+OUTPUT
+Enter information of students:
+
+For roll number1,
+Enter first name: Adrien
+Enter marks: 98
+
+For roll number2,
+Enter first name: Brian
+Enter marks: 96
+
+For roll number3,
+Enter first name: Casey
+Enter marks: 93
+
+For roll number4,
+Enter first name: Daniel
+Enter marks: 99
+
+For roll number5,
+Enter first name: Evan
+Enter marks: 97
+
+
+Displaying Information:
+
+Roll number: 1
+First name: Adrien
+Marks: 98.0
+
+Roll number: 2
+First name: Brian
+Marks: 96.0
+
+Roll number: 3
+First name: Casey
+Marks: 93.0
+
+Roll number: 4
+First name: Daniel
+Marks: 99.0
+
+Roll number: 5
+First name: Evan
+Marks: 97.0
