@@ -1,0 +1,97 @@
+QUESTION
+Write a C program to input customer id, name, street name, city, pin code, initial reading and final reading of current and calculate the total electricity bill according to the given condition:
+Units               Rate/unit
+For first 50 units – Rs 0.50
+For next 100 units – Rs 0.75
+For next 100 units – Rs 1.20
+For unit above 250 – Rs 1.50
+
+
+
+
+CODE
+#include <stdio.h>
+#include <string.h>
+struct Address
+{
+char Street[20],City[30];
+int pincode;
+}Add;
+struct Customer
+{
+int custID,IR,FR;
+char name[50];
+struct Address Add;
+}Cust;
+void main()
+{
+int unit; float amt;
+//storing information
+struct Customer Cust;
+printf("Enter information of the customer :\n");
+printf("\nEnter Customer ID : ");
+scanf("%d",&Cust.custID);
+printf("Enter Customer Name : ");
+scanf("%s",&Cust.name);
+printf("Enter Street Name : ");
+scanf("%s",&Cust.Add.Street);
+printf("Enter City : ");
+scanf("%s",&Cust.Add.City);
+printf("Enter Pincode : ");
+scanf("%d",&Cust.Add.pincode);
+printf("Enter Initial Reading : ");
+scanf("%d",&Cust.IR);
+printf("Enter Final Reading : ");
+scanf("%d",&Cust.FR);
+unit=Cust.FR-Cust.IR;
+if(unit<=50)
+{
+amt=unit*0.50;
+}
+else if(unit<=150)
+{
+amt=25+((unit-50)*0.75);
+}
+else if(unit<=250)
+{
+amt=100+((unit-150)*1.20);
+}
+else
+{
+amt=220+((unit-250)*1.50);
+}
+//printing the customer information
+printf("\n\n\nCustomer Information :\n");
+printf("\nCustomer ID : %d",Cust.custID);
+printf("\nCustomer Name : %s",Cust.name);
+printf("\nStreet Name : %s",Cust.Add.Street);
+printf("\nCity : %s",Cust.Add.City);
+printf("\nPincode : %d",Cust.Add.pincode);
+printf("\nTotal Electricity Bill : Rs %f",amt);
+}
+
+
+
+
+
+OUTPUT
+Enter information of the customer :
+
+Enter Customer ID : 1234
+Enter Customer Name : Daniel
+Enter Street Name : Bakers
+Enter City : Faridabad
+Enter Pincode : 121001
+Enter Initial Reading : 5000
+Enter Final Reading : 5240
+
+
+
+Customer Information :
+
+Customer ID : 1234
+Customer Name : Daniel
+Street Name : Bakers
+City : Faridabad
+Pincode : 121001
+Total Electricity Bill : Rs 208.000000
