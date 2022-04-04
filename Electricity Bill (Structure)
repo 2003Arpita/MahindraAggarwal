@@ -1,5 +1,5 @@
 QUESTION
-Write a C program to input customer id, name, street name, city, pin code, initial reading and final reading of electric power consumption and calculate the total electricity bill according to the given condition:
+Write a C program to input customer id, name, mobile number, street name, city, pin code, initial reading and final reading of electric power consumption and calculate the total electricity bill according to the given condition:
 Units               Rate/unit
 For first 50 units – Rs 0.50
 For next 100 units – Rs 0.75
@@ -12,14 +12,16 @@ For unit above 250 – Rs 1.50
 CODE
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 struct Address
 {
 char Street[20],City[30];
-int pincode;
+long pincode;
 }Add;
 struct Customer
 {
 int custID,IR,FR;
+long mobile;
 char name[50];
 struct Address Add;
 }Cust;
@@ -33,12 +35,14 @@ printf("\nEnter Customer ID : ");
 scanf("%d",&Cust.custID);
 printf("Enter Customer Name : ");
 scanf("%s",&Cust.name);
+printf("Enter mobile number : ");
+scanf("%ld",&Cust.mobile);
 printf("Enter Street Name : ");
 scanf("%s",&Cust.Add.Street);
 printf("Enter City : ");
 scanf("%s",&Cust.Add.City);
 printf("Enter Pincode : ");
-scanf("%d",&Cust.Add.pincode);
+scanf("%ld",&Cust.Add.pincode);
 printf("Enter Initial Reading : ");
 scanf("%d",&Cust.IR);
 printf("Enter Final Reading : ");
@@ -64,9 +68,10 @@ amt=220+((unit-250)*1.50);
 printf("\n\n\nCustomer Information :\n");
 printf("\nCustomer ID : %d",Cust.custID);
 printf("\nCustomer Name : %s",Cust.name);
+printf("\nMobile Number : %ld",Cust.mobile);
 printf("\nStreet Name : %s",Cust.Add.Street);
 printf("\nCity : %s",Cust.Add.City);
-printf("\nPincode : %d",Cust.Add.pincode);
+printf("\nPincode : %ld",Cust.Add.pincode);
 printf("\nTotal Electricity Bill : Rs %f",amt);
 }
 
@@ -79,6 +84,7 @@ Enter information of the customer :
 
 Enter Customer ID : 1234
 Enter Customer Name : Daniel
+Enter Mobile Number : 9988776655
 Enter Street Name : Bakers
 Enter City : Faridabad
 Enter Pincode : 121001
@@ -91,6 +97,7 @@ Customer Information :
 
 Customer ID : 1234
 Customer Name : Daniel
+Mobile Number : 9988776655
 Street Name : Bakers
 City : Faridabad
 Pincode : 121001
