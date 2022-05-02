@@ -1,0 +1,45 @@
+QUESTION
+Write a C program to input a sentence by user and print the sentence without spaces(using malloc).
+
+
+
+
+CODE
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+void main()
+{
+    char *str,*s;
+    str=(char*)malloc(50*sizeof(char));
+    s=(char*)malloc(50*sizeof(char));
+    clrscr();
+    printf("Enter a sentence :\n");
+    gets (str);
+    char *temp;
+    temp=(char*)malloc(50*sizeof(char));
+    temp=str;
+    int i=0;
+    while(*temp!='\0')
+    {
+        if(*temp!=' ')
+        {
+            s[i++]=*temp;
+        }
+        temp++;
+    }
+    s[i]='\0';
+    puts(s);
+    getch();
+    free(s);
+    free(str);
+    free(temp);
+}
+
+
+
+
+OUTPUT
+Enter a sentence :
+My Name is Maya
+MyNameisMaya
