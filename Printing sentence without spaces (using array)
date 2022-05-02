@@ -1,0 +1,33 @@
+QUESTION
+Write a C program to input a sentence by user and print the sentence without spaces(using array).
+
+
+
+
+CODE
+#include <stdio.h>
+void main()
+{
+    char str[50],s[50];
+    int i=0,k=0;
+    printf("Enter a sentence :\n");
+    gets (str);
+    while(str[i]!='\0')
+    {
+        if(str[i]!=' ')
+        {
+            s[k]=str[i];
+            k++;
+        }
+        i++;
+    }
+    printf("%s",s);
+}
+
+
+
+
+OUTPUT
+Enter a sentence :
+My Name is Maya
+MyNameisMaya
