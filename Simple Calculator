@@ -1,0 +1,45 @@
+QUESTION
+Write a program in C to design a simple calculator with four operators(+,-,* and /)by using switch case.
+
+
+
+
+CODE
+#include <stdio.h>
+#include <conio.h>
+void main()
+{
+int a,b,c;
+char ch;
+clrscr();
+//inputting two numbers for operation
+printf("Enter two numbers :\n");
+scanf("\n%d",&a);
+scanf("\n%d",&b);
+printf("\nPlease enter the operation : ");
+scanf("\n%c",&ch);
+switch(ch)
+{
+case '+':c=a+b;
+         break;
+case '-':c=a-b;         
+         break;
+case '*':c=a*b;         
+         break;
+case '/':c=a/b;         
+         break;
+default:printf("Invalid Input");
+}
+printf("%d",c);
+}
+
+
+
+
+OUTPUT
+Enter two numbers
+4
+3
+
+Please enter the operation : +
+7
