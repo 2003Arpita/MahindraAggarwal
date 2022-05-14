@@ -1,0 +1,30 @@
+QUESTION
+Write a program in C to find the biggest number out of three numbers.
+
+
+
+CODE
+#include <stdio.h>
+void main ()
+{
+  int a, b, c, big;
+  printf ("Enter three numbers : \n");
+  scanf("\n%d",&a);
+  scanf("\n%d",&b);
+  scanf("\n%d",&c);
+  big=a;
+  if(big<b)
+  big=b;
+  if(big<c)
+  big=c;
+  printf("Biggest Number : %d",big);
+}
+
+
+
+OUTPUT
+Enter three numbers :
+1
+5
+4
+Biggest Number : 5
