@@ -1,0 +1,52 @@
+QUESTION
+Write a C program to input 5 numbers into an array. Search for the number inputted by the user using binary search and print its location.
+
+
+
+
+CODE
+#include <stdio.h>
+void main() 
+{
+    int beg=0,mid,end=4,i,flag=0,A[5],n;
+    printf("Enter 5 numbers\n");
+    for(i=0;i<5;i++)
+    {
+    scanf("%d",&A[i]);
+    }
+    printf("\nEnter number to be searched\n");
+    scanf("%d",&n);
+    while(beg<=end)
+    {
+        mid=(beg+end)/2;
+        if(n==A[mid])
+        {
+            flag=1;
+            printf("The number is found.\nLocation = %d",(mid+1));
+            break;
+        }
+        if(n<A[mid])
+        end=mid-1;
+        if(n>A[mid])
+        beg=mid+1;
+    }
+    if(flag==0)
+    printf("Search not found");
+}
+
+
+
+
+
+OUTPUT
+Enter 5 numbers
+1
+5
+7
+9
+8
+
+Enter number to be searched
+5
+The number is found.
+Location = 2
